@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="salaryManagementFormContext" prefHeight="1035.0" prefWidth="1607.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SalaryManagementController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutX="-1.0" layoutY="24.0" stroke="WHITE" strokeType="INSIDE" width="1607.0" />
+        <Label layoutX="656.0" layoutY="35.0" text="Salary Management" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="31.0" />
+            </font>
+        </Label>
+        <Separator layoutX="1002.0" layoutY="60.0" prefHeight="0.0" prefWidth="330.0" />
+        <Separator layoutX="279.0" layoutY="60.0" prefHeight="0.0" prefWidth="330.0" />
+      <JFXRadioButton layoutX="1340.0" layoutY="117.0" onAction="#sortBySectionOnAction" selected="true" style="-jfx-selected-color: #7FFF00;" text="Teacher" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="rdSalaryType" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton layoutX="1463.0" layoutY="117.0" onAction="#sortBySectionOnAction" style="-jfx-selected-color: #7FFF00;" text="Employee" textFill="WHITE" toggleGroup="$rdSalaryType">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXRadioButton>
+      <TableView fx:id="tblSectionDetails" layoutX="25.0" layoutY="172.0" onMouseClicked="#setDataToFieldsOnAction" prefHeight="355.0" prefWidth="1551.0" style="-fx-border-color: black;" stylesheets="@../Styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="145.66665649414062" style="-fx-border-color: black;" styleClass="colStudentID" text="Teacher ID" />
+          <TableColumn fx:id="colName" prefWidth="202.33331298828125" styleClass="colStudentID" text="Teacher Name" />
+            <TableColumn fx:id="colDescAndJobRole" prefWidth="283.66668701171875" text="Teacher Description" />
+            <TableColumn fx:id="colSubNameAndWorkingDays" prefWidth="225.0" styleClass="colStudentID" text="Subject Name" />
+            <TableColumn fx:id="colFeeAndSalaryPerDay" prefWidth="131.6666259765625" styleClass="colFeeForTeacher" text="fee (Rs)" />
+            <TableColumn fx:id="colTotalFeeAndAllowances" prefWidth="128.6666259765625" styleClass="colFeeForTeacher" text="Total Fees" />
+            <TableColumn fx:id="colDeductions" prefWidth="127.666748046875" styleClass="colFeeForTeacher" text="Deductions" />
+            <TableColumn fx:id="colNetSalary" prefWidth="145.333251953125" styleClass="colFeeForTeacher" text="Net Salary" />
+            <TableColumn fx:id="colCondition" prefWidth="148.6666259765625" styleClass="colStudentID" text="Condition" />
+        </columns>
+      </TableView>
+      <Label layoutX="133.0" layoutY="581.0" text="Teacher ID :" textFill="#570808">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <JFXComboBox fx:id="cmbMonths" focusColor="#042fae" labelFloat="true" layoutX="29.0" layoutY="107.0" prefHeight="31.0" prefWidth="288.0" promptText="Month" style="-fx-background-color: white;" />
+      <Label fx:id="lblTeacherID" layoutX="240.0" layoutY="582.0" prefHeight="21.0" prefWidth="95.0" textFill="#570808">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="111.0" layoutY="877.0" text="Deductions    :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTeacherDeductions" layoutX="239.0" layoutY="875.0" onAction="#countNetSalaryOfTeacher" onKeyReleased="#textFields_Teacher_Key_Released" prefHeight="31.0" prefWidth="140.0" />
+      <Label layoutX="130.0" layoutY="936.0" text="Net Salary  :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNetSalary" layoutX="239.0" layoutY="934.0" mouseTransparent="true" prefHeight="31.0" prefWidth="140.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></TextField>
+      <Button fx:id="btnPayRoll" layoutX="1304.0" layoutY="932.0" mnemonicParsing="false" onAction="#createPayRollOnAction" prefHeight="49.0" prefWidth="231.0" style="-fx-background-color: linear-gradient(to right, #767575, #5f5e5e, #494849, #343434, #202020, #202020, #201f20, #201f1f, #333131, #474545, #5d5959, #736e6e);; -fx-background-radius: 20; -fx-border-radius: 20;" text="Create PayRoll" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="87.0" layoutY="694.0" text="Total Class Fees   :" textFill="#fffefe">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtClassFee" layoutX="239.0" layoutY="692.0" mouseTransparent="true" prefHeight="31.0" prefWidth="140.0" />
+      <Label layoutX="108.0" layoutY="754.0" text="Percentage % :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPercentage" layoutX="239.0" layoutY="752.0" mouseTransparent="true" prefHeight="31.0" prefWidth="140.0" />
+      <Label fx:id="lblPercentage" layoutX="298.0" layoutY="757.0" text="80%" textFill="#139a09">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Separator layoutX="556.0" layoutY="607.0" orientation="VERTICAL" prefHeight="335.0" prefWidth="19.0" />
+      <Label layoutX="771.0" layoutY="582.0" text="Employee ID :" textFill="#570808">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmployeeID" layoutX="897.0" layoutY="583.0" prefHeight="21.0" prefWidth="140.0" textFill="#570808">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="780.0" layoutY="814.0" text="Allowances :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEAllowances" layoutX="896.0" layoutY="812.0" onKeyReleased="#textFields_Employee_Key_Released" prefHeight="31.0" prefWidth="140.0" />
+      <Label layoutX="780.0" layoutY="874.0" text="Deductions :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEDeductions" layoutX="896.0" layoutY="872.0" onAction="#countNetSalaryOfEmployee" onKeyReleased="#textFields_Employee_Key_Released" prefHeight="31.0" prefWidth="140.0" />
+      <Label layoutX="760.0" layoutY="694.0" text="Working Days :" textFill="#fffefe">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtWorkingDays" layoutX="896.0" layoutY="692.0" onKeyReleased="#textFields_Employee_Key_Released" prefHeight="31.0" prefWidth="140.0" />
+      <Label layoutX="758.0" layoutY="754.0" text="Salary per Day :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSalaryPerDay" layoutX="896.0" layoutY="752.0" onKeyReleased="#textFields_Employee_Key_Released" prefHeight="31.0" prefWidth="140.0" />
+      <Label layoutX="786.0" layoutY="934.0" text="Net Salary :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtENetSalary" layoutX="896.0" layoutY="932.0" mouseTransparent="true" prefHeight="31.0" prefWidth="140.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <Label layoutX="814.0" layoutY="635.0" text="Name :" textFill="#030303">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEName" disable="true" layoutX="896.0" layoutY="633.0" mouseTransparent="true" prefHeight="31.0" prefWidth="140.0" />
+      <Label layoutX="163.0" layoutY="636.0" text="Name :" textFill="#030303">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTName" disable="true" layoutX="241.0" layoutY="634.0" mouseTransparent="true" prefHeight="31.0" prefWidth="140.0" />
+      <Label layoutX="122.0" layoutY="816.0" text="Allowances :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTAllowances" layoutX="238.0" layoutY="814.0" onKeyReleased="#textFields_Teacher_Key_Released" prefHeight="31.0" prefWidth="140.0" />
+      <Button layoutX="1294.0" layoutY="579.0" mnemonicParsing="false" onMouseClicked="#generateTeachersSalaryReportOnAction" prefHeight="37.0" prefWidth="248.0" style="-fx-background-color: blue;" text="Get Teacher's Salary Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="1295.0" layoutY="638.0" mnemonicParsing="false" onMouseClicked="#generateEmployeesSalaryReportOnAction" prefHeight="37.0" prefWidth="248.0" style="-fx-background-color: blue;" text="Get Employee's Salary Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+    </children>
+</AnchorPane>

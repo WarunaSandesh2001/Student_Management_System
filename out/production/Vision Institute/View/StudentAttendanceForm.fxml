@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="attendanceFormContext" prefHeight="1030.0" prefWidth="1618.0" style="-fx-background-color: #34495e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentAttendanceFormController">
+   <children>
+      <AnchorPane layoutX="45.0" layoutY="99.0" prefHeight="892.0" prefWidth="1531.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutY="32.0" stroke="WHITE" strokeType="INSIDE" width="1620.0" />
+      <Label layoutX="64.0" layoutY="43.0" text="Mark Attendance" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="#a8a8a8" glyphName="CIRCLE" layoutX="38.0" layoutY="70.0" size="15.0" />
+      <Separator layoutX="328.0" layoutY="67.0" prefHeight="2.0" prefWidth="529.0" />
+      <TextField fx:id="txtSearchStudent" layoutX="199.0" layoutY="143.0" onAction="#searchStudentOnAction" prefHeight="40.0" prefWidth="596.0" style="-fx-background-color: #F5F5F5; -fx-border-color: black;" />
+      <Label layoutX="131.0" layoutY="150.0" prefHeight="26.0" prefWidth="63.0" text="Search ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="764.0" layoutY="168.0" size="20.0" />
+      <TableView fx:id="tblStudentDetails" layoutX="92.0" layoutY="219.0" prefHeight="296.0" prefWidth="1447.0" style="-fx-background-color: white; -fx-border-color: BLACK;" stylesheets="@../Styles/TableStyles.css">
+         <columns>
+            <TableColumn fx:id="colStudentID" prefWidth="92.00003814697266" style="-fx-background-color: #f39c12; -fx-border-color: black;" styleClass="colStudentID" text="Student ID" />
+            <TableColumn fx:id="colName" prefWidth="179.66668701171875" styleClass="colStudentName" text="Name" />
+            <TableColumn fx:id="colNIC" prefWidth="199.33331298828125" styleClass="colStudentNIC" text="NIC" />
+            <TableColumn fx:id="colAddress" prefWidth="230.66668701171875" styleClass="colStudentAddress" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="260.0" styleClass="colStudentEmail" text="Email" />
+            <TableColumn fx:id="colContact" prefWidth="249.6666259765625" styleClass="colStudentContact" text="Contact" />
+            <TableColumn fx:id="colExamYear" prefWidth="231.0" styleClass="colExamYear" text="Exam Year" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnMark" layoutX="830.0" layoutY="146.0" mnemonicParsing="false" onAction="#markAttendanceOnAction" prefHeight="31.0" prefWidth="176.0" style="-fx-background-color: #00008B;" text="Mark" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <JFXComboBox fx:id="cmbSubject" focusColor="#0739d0" labelFloat="true" layoutX="1062.0" layoutY="147.0" prefHeight="31.0" prefWidth="219.0" promptText="Subject" unFocusColor="BLACK" />
+      <TableView fx:id="tblAttendance" layoutX="795.0" layoutY="610.0" prefHeight="362.0" prefWidth="740.0" style="-fx-border-color: black;" stylesheets="@../Styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colAID" prefWidth="99.33331298828125" styleClass="colStudentID" text="Student ID" />
+          <TableColumn fx:id="colASName" prefWidth="216.6666259765625" styleClass="colStudentName" text="Name" />
+            <TableColumn fx:id="colAExamYear" prefWidth="201.6666259765625" styleClass="colExamYear" text="Exam Year" />
+            <TableColumn fx:id="colAttendance" prefWidth="215.3333740234375" styleClass="colAttendance" text="Attendance" />
+        </columns>
+      </TableView>
+      <JFXComboBox fx:id="cmbTeacher" focusColor="#0739d0" labelFloat="true" layoutX="1315.0" layoutY="149.0" prefHeight="31.0" prefWidth="219.0" promptText="Teacher" unFocusColor="BLACK" />
+      <Label layoutX="223.0" layoutY="726.0" prefHeight="28.0" prefWidth="214.0" text="Number of Students     :">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="223.0" layoutY="771.0" prefHeight="26.0" prefWidth="214.0" text="Number of attendance :">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotalStudents" layoutX="463.0" layoutY="727.0" prefHeight="26.0" prefWidth="106.0" text="0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAttendCount" layoutX="463.0" layoutY="772.0" prefHeight="26.0" prefWidth="107.0" text="0" textFill="#250aab">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="dtPicker" defaultColor="BLACK" editable="false" layoutX="1323.0" layoutY="53.0" onAction="#checkAttendanceInfo_OnAction" prefHeight="31.0" prefWidth="248.0" promptText="Select Class Date" style="-fx-background-color: white;" />
+      <TextField fx:id="txtSearchAttendance" layoutX="1029.0" layoutY="563.0" onAction="#searchAttendanceOnAction" prefHeight="31.0" prefWidth="286.0" style="-fx-border-color: black;" />
+      <Label layoutX="860.0" layoutY="566.0" prefHeight="26.0" prefWidth="143.0" text="Search Attendance">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="1290.0" layoutY="585.0" size="20.0" />
+      <JFXButton layoutX="1471.0" layoutY="564.0" onAction="#deleteAttendanceOnAction" text="Delete" textFill="#a40808" underline="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <FontAwesomeIconView glyphName="TRASH" layoutX="1464.0" layoutY="585.0" />
+   </children>
+</AnchorPane>

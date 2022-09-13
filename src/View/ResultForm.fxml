@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="studentResultFormContext" prefHeight="1030.0" prefWidth="1618.0" style="-fx-background-color: #34495e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ResultFormController">
+   <children>
+      <AnchorPane layoutX="43.0" layoutY="97.0" prefHeight="897.0" prefWidth="1534.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutX="-1.0" layoutY="33.0" stroke="WHITE" strokeType="INSIDE" width="1620.0" />
+      <Label layoutX="64.0" layoutY="45.0" text="Student Results" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtSearchStudent" focusColor="WHITE" layoutX="374.0" layoutY="132.0" onAction="#searchStudentOnAction" prefHeight="31.0" prefWidth="571.0" style="-fx-border-color: BLACK; -fx-background-color: #ecf0f1;" unFocusColor="BLACK" />
+      <FontAwesomeIconView fill="#a8a8a8" glyphName="CIRCLE" layoutX="37.0" layoutY="73.0" size="15.0" />
+      <Separator layoutX="314.0" layoutY="69.0" prefHeight="4.0" prefWidth="633.0" />
+      <Label layoutX="234.0" layoutY="138.0" prefHeight="26.0" prefWidth="125.0" text="Search Student">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblStudentDetails" layoutX="77.0" layoutY="201.0" prefHeight="276.0" prefWidth="1469.0" style="-fx-background-color: white; -fx-border-color: BLACK;" stylesheets="@../Styles/TableStyles.css">
+         <columns>
+            <TableColumn fx:id="colStudentID" prefWidth="103.33334350585938" style="-fx-background-color: #f39c12; -fx-border-color: black;" styleClass="colStudentID" text="Student ID" />
+            <TableColumn fx:id="colStudentName" prefWidth="218.0" styleClass="colStudentName" text="Name" />
+            <TableColumn fx:id="colNIC" prefWidth="233.33331298828125" styleClass="colStudentNIC" text="NIC" />
+            <TableColumn fx:id="colAddress" prefWidth="245.66668701171875" styleClass="colStudentAddress" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="298.6666259765625" styleClass="colStudentEmail" text="E-mail" />
+            <TableColumn fx:id="colContact" prefWidth="231.0" styleClass="colStudentContact" text="Contact" />
+            <TableColumn fx:id="colExamYear" prefWidth="135.0" styleClass="colExamYear" text="Exam Year" />
+         </columns>
+      </TableView>
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="917.0" layoutY="157.0" size="20.0" />
+      <ComboBox fx:id="cmbExamMonth" layoutX="1255.0" layoutY="135.0" prefHeight="31.0" prefWidth="289.0" promptText="Select Month" style="-fx-background-color: #bdc3c7; -fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <ComboBox fx:id="cmbSubject" layoutX="109.0" layoutY="522.0" prefHeight="33.0" prefWidth="475.0" promptText="Select Subject" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <JFXTextField fx:id="txtMarks" focusColor="#0132c6" labelFloat="true" layoutX="106.0" layoutY="606.0" onAction="#setGradeOnAction" onKeyReleased="#textfield_ReleaseOnAction" prefHeight="31.0" prefWidth="475.0" promptText="Marks" style="-fx-background-color: white;">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></JFXTextField>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcfcfc" height="200.0" layoutX="214.0" layoutY="699.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="200.0" />
+      <Label fx:id="lblGrade" layoutX="277.0" layoutY="727.0" prefHeight="107.0" prefWidth="117.0" textFill="#bc0404">
+         <font>
+            <Font name="System Bold" size="100.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSave" layoutX="1242.0" layoutY="906.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="38.0" prefWidth="277.0" style="-fx-background-color: #00008B;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="lblStudentID" layoutX="1415.0" layoutY="490.0" prefHeight="30.0" prefWidth="116.0" textFill="#c90000">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="1293.0" layoutY="489.0" text="Student ID :" textFill="#c90000">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="1242.0" layoutY="832.0" mnemonicParsing="false" onAction="#openResultReportForm" prefHeight="38.0" prefWidth="277.0" style="-fx-background-color: #543070;" text="Result Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <JFXTextField fx:id="txtExamName" focusColor="#083bd3" labelFloat="true" layoutX="861.0" layoutY="606.0" onKeyReleased="#textfield_ReleaseOnAction" prefHeight="31.0" prefWidth="661.0" promptText="Exam Name" style="-fx-background-color: white;" />
+      <ComboBox fx:id="cmbExamNames" layoutX="862.0" layoutY="684.0" prefHeight="31.0" prefWidth="658.0" promptText="Exam Names" style="-fx-background-color: #00000000; -fx-border-color: black;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+   </children>
+</AnchorPane>

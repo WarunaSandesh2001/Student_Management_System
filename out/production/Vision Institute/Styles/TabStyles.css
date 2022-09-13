@@ -1,0 +1,12 @@
+.tab-label{
+    -fx-font-size: 12pt;
+}
+.tab-main{
+    -fx-pref-width: 392.25;
+}
+.tab-main{
+    -fx-background-color: black;
+}
+.btnGetDetails{
+    font-weight : bold ;
+}

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="UserDashBoardContext" prefHeight="1075.0" prefWidth="1923.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UserDashBoardFormController">
+   <children>
+      <AnchorPane fx:id="btnMinimize" layoutX="1754.0" layoutY="3.0" onMouseClicked="#minimizeProgram2" onMouseEntered="#minimizeBTNMouseEntered1" onMouseExited="#minimizeBTNMouseExited1" prefHeight="38.0" prefWidth="53.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane layoutX="1816.0" layoutY="3.0" prefHeight="38.0" prefWidth="38.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane fx:id="closeBTN" layoutX="1862.0" layoutY="3.0" onMouseClicked="#closeTheProgram2" onMouseEntered="#closeBTNMouseEntered" onMouseExited="#closeBTNMouseExited" prefHeight="38.0" prefWidth="56.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1873.0" layoutY="7.0" onMouseClicked="#closeTheProgram1" onMouseEntered="#closeBTNMouseEntered1" onMouseExited="#closeBTNMouseExited1">
+         <image>
+            <Image url="@../Assets/exitButton.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="1763.0" layoutY="-1.0" onMouseClicked="#minimizeProgram1" onMouseEntered="#minimizeBTNMouseEntered" onMouseExited="#minimizeBTNMouseExited">
+         <image>
+            <Image url="@../Assets/minimize-1779402-151285945.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="1817.0" layoutY="7.0">
+         <image>
+            <Image url="@../Assets/minimize-icon-vector-216413754.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="1040.0" text="Vision Institue  - Matara" textFill="#030303">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4d4d4d" height="1076.0" layoutX="-1.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="286.0" />
+      <Button layoutX="98.0" layoutY="751.0" mnemonicParsing="false" onAction="#logoutOnAction" style="-fx-background-color: black; -fx-background-radius: 10; -fx-border-color: white; -fx-border-radius: 10;" text="Log Out" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnStudent" layoutX="65.0" layoutY="261.0" mnemonicParsing="false" onAction="#openStudentForm" prefHeight="37.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: white;" text="Students">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnSubject" layoutX="64.0" layoutY="340.0" mnemonicParsing="false" onAction="#openSubjectForm" prefHeight="37.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: white;" text="Subjects">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnPayment" layoutX="63.0" layoutY="415.0" mnemonicParsing="false" onAction="#openPaymentForm" prefHeight="37.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: white;" text="Payments">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnAttendance" layoutX="62.0" layoutY="493.0" mnemonicParsing="false" onAction="#openAttendanceFormOnAction" prefHeight="37.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: white;" text="Attendance">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnResult" layoutX="62.0" layoutY="573.0" mnemonicParsing="false" onAction="#openResultFormOnAction" prefHeight="37.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: white;" text="Results">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnSchedule" layoutX="62.0" layoutY="653.0" mnemonicParsing="false" onAction="#openScheduleForm" prefHeight="37.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: white;" text="Schedule">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <AnchorPane fx:id="dashBoardFormContext" layoutX="285.0" layoutY="45.0" prefHeight="1030.0" prefWidth="1640.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#34495e" height="321.0" layoutX="69.0" layoutY="87.0" stroke="BLACK" strokeType="INSIDE" width="755.0" />
+            <Label layoutX="115.0" layoutY="96.0" text="Summery" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView fill="WHITE" glyphName="CIRCLE" layoutX="92.0" layoutY="119.0" />
+            <Label layoutX="530.0" layoutY="333.0" prefHeight="25.0" prefWidth="62.0" text="Owner :" textFill="#e8dede">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblOwnersName" layoutX="601.0" layoutY="335.0" prefHeight="25.0" prefWidth="205.0" text="Mr. Waruna Sandesh" textFill="#e8dede">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="274.0" layoutY="168.0" prefHeight="26.0" prefWidth="182.0" text="Number of Students : " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNumberOfStudents" layoutX="482.0" layoutY="171.0" prefHeight="25.0" prefWidth="62.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNumberOfTeachers" layoutX="482.0" layoutY="213.0" prefHeight="25.0" prefWidth="62.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="555.0" layoutY="369.0" prefHeight="25.0" prefWidth="35.0" text="Tel :" textFill="#e8dede">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblOwnersContact" layoutX="602.0" layoutY="371.0" prefHeight="25.0" prefWidth="205.0" text="071 477 24 58" textFill="#e8dede">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNumberOfSubjects" layoutX="482.0" layoutY="252.0" prefHeight="25.0" prefWidth="62.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="922.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="319.0" fitWidth="691.0" layoutX="890.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/visual-mobile.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="275.0" layoutY="212.0" prefHeight="26.0" prefWidth="182.0" text="Number of Teachers : " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="276.0" layoutY="250.0" prefHeight="26.0" prefWidth="182.0" text="Number of Subjects  : " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Separator layoutX="231.0" layoutY="119.0" prefHeight="0.0" prefWidth="239.0" />
+            <TableView fx:id="tblDetails" layoutX="461.0" layoutY="510.0" prefHeight="446.0" prefWidth="638.0" stylesheets="@../Styles/TableStyles.css">
+              <columns>
+                <TableColumn fx:id="colSubjects" prefWidth="259.0" styleClass="colSubject" text="Subject" />
+                <TableColumn fx:id="colTeachers" prefWidth="375.0" styleClass="colTeacher" text="Teacher" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+      <Label layoutX="14.0" layoutY="1040.0" text="Vision Institute  - Matara" textFill="#c3c3c3">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnDashBoard" layoutX="65.0" layoutY="180.0" mnemonicParsing="false" onAction="#openDashBoardForm" prefHeight="37.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: white;" text="DashBoard">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <FontAwesomeIconView fill="#c3c3c3" glyphName="HOME" layoutX="17.0" layoutY="206.0" size="25.0" />
+      <FontAwesomeIconView fill="#c3c3c3" glyphName="USERS" layoutX="17.0" layoutY="285.0" size="25.0" />
+      <FontAwesomeIconView fill="#c3c3c3" glyphName="BOOK" layoutX="17.0" layoutY="363.0" size="25.0" />
+      <FontAwesomeIconView fill="#c3c3c3" glyphName="MONEY" layoutX="17.0" layoutY="440.0" size="25.0" />
+      <FontAwesomeIconView fill="#c3c3c3" glyphName="PENCIL" layoutX="18.0" layoutY="521.0" size="25.0" />
+      <FontAwesomeIconView fill="#c3c3c3" glyphName="BOOK" layoutX="18.0" layoutY="599.0" size="25.0" />
+      <FontAwesomeIconView fill="#c3c3c3" glyphName="CALENDAR" layoutX="17.0" layoutY="678.0" size="25.0" />
+      <Label layoutX="1088.0" layoutY="7.0" text="Vision Institute">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="294.0" layoutY="-1.0" prefHeight="41.0" prefWidth="139.0" text="12.58 PM">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="431.0" layoutY="7.0" prefHeight="34.0" prefWidth="129.0" text="2021/09/11" />
+      <Label layoutX="57.0" layoutY="12.0" text="SYSTEM" textFill="WHITE">
+         <font>
+            <Font name="Bell MT Bold" size="40.0" />
+         </font></Label>
+      <Label layoutX="83.0" layoutY="60.0" text="USER" textFill="WHITE">
+         <font>
+            <Font name="Bell MT Bold" size="40.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

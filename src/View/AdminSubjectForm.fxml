@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AdminSubjectContext" prefHeight="1035.0" prefWidth="1607.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminSubjectFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutX="-1.0" layoutY="25.0" stroke="WHITE" strokeType="INSIDE" width="1607.0" />
+      <Label layoutX="605.0" layoutY="39.0" text="Subject Details Management" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="1027.0" layoutY="61.0" prefHeight="0.0" prefWidth="330.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="SQUARE" layoutX="60.0" layoutY="119.0" />
+      <JFXTextField fx:id="txtSubjectName" focusColor="#1a42bb" labelFloat="true" layoutX="97.0" layoutY="160.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="600.0" promptText="Subject Name">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXTextField>
+      <JFXTextField fx:id="txtSubjectDescription" focusColor="#1a42bb" labelFloat="true" layoutX="97.0" layoutY="242.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="1144.0" promptText="Subject description" />
+      <Label layoutX="1362.0" layoutY="113.0" text="Subject ID :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSubjectID" layoutX="1460.0" layoutY="113.0" prefHeight="25.0" prefWidth="109.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnAdd" layoutX="1349.0" layoutY="273.0" mnemonicParsing="false" onAction="#AddSubjectOnAction" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: #00008B;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="83.0" layoutY="398.0" text="Modify Subject Details" textFill="#060607">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="#e8e8e8" glyphName="SQUARE" layoutX="60.0" layoutY="415.0" />
+      <Label layoutX="84.0" layoutY="103.0" text="Add New Subject" textFill="#0f1317">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField layoutX="253.0" layoutY="443.0" prefHeight="31.0" prefWidth="412.0" />
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="641.0" layoutY="464.0" size="18.0" />
+      <Label layoutX="188.0" layoutY="448.0" text="Search" />
+      <TextField fx:id="txtTempSubjectName" layoutX="884.0" layoutY="634.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="594.0" />
+      <Label layoutX="754.0" layoutY="638.0" text="Subject Name :" />
+      <TextField fx:id="txtTempDescription" layoutX="885.0" layoutY="703.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="594.0" />
+      <Label layoutX="769.0" layoutY="707.0" text="Description :" />
+      <Button fx:id="btnUpdate" layoutX="1337.0" layoutY="843.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: #00008B;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="1105.0" layoutY="842.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: #A52A2A;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TableView fx:id="tblSubjectDetails" layoutX="73.0" layoutY="523.0" onMouseClicked="#setDataOnAction" prefHeight="446.0" prefWidth="625.0" style="-fx-border-color: black;" stylesheets="@../Styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colSubjectID" prefWidth="100.0" style="-fx-border-color: black;" styleClass="colStudentID" text="Subject ID" />
+          <TableColumn fx:id="colSubjectName" prefWidth="182.33334350585938" styleClass="colStudentID" text="Subject Name" />
+            <TableColumn fx:id="colDescription" prefWidth="337.0" text="Description" />
+        </columns>
+      </TableView>
+      <Separator layoutX="254.0" layoutY="61.0" prefHeight="0.0" prefWidth="330.0" />
+   </children>
+</AnchorPane>

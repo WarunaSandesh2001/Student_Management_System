@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AdminInformationContext" prefHeight="1035.0" prefWidth="1607.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminInformationFormController">
+   <children>
+      <JFXTabPane layoutX="12.0" layoutY="20.0" prefHeight="998.0" prefWidth="1579.0" style="-fx-background-color: #ead4ff;" styleClass="tab-label" stylesheets="@../Styles/TabStyles.css">
+         <tabs>
+            <Tab styleClass="tab-main" text="Student Details">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #34495e;">
+                     <children>
+                        <Label layoutX="145.0" layoutY="100.0" text="Search Student" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="txtSearchStudent" focusColor="WHITE" layoutX="296.0" layoutY="99.0" onAction="#setDataToStudentDetailTable" prefHeight="31.0" prefWidth="669.0" style="-fx-border-color: white; -fx-background-color: #bdc3c7;" />
+                        <FontAwesomeIconView glyphName="SEARCH" layoutX="943.0" layoutY="123.0" size="20.0" />
+                        <TableView fx:id="tblStudentDetails" layoutX="13.0" layoutY="165.0" prefHeight="776.0" prefWidth="1553.0" style="-fx-border-color: black;" stylesheets="@../Styles/AdminTables.css">
+                           <columns>
+                              <TableColumn fx:id="colStudentID" prefWidth="104.99996948242188" style="-fx-border-color: black; -fx-background-color: #f39c12;" styleClass="colSubject" text="Student ID" />
+                              <TableColumn fx:id="colStudentName" prefWidth="132.0" styleClass="colSubject" text="Student Name" />
+                              <TableColumn fx:id="colStudentAddress" prefWidth="145.33334350585938" styleClass="colSubject" text="Address" />
+                              <TableColumn fx:id="colStudentNIC" prefWidth="141.66665649414062" styleClass="colSubject" text="NIC" />
+                              <TableColumn fx:id="colStudentEmail" prefWidth="176.0" styleClass="colSubject" text="E-mail" />
+                              <TableColumn fx:id="colStudentGender" prefWidth="94.66668701171875" styleClass="colSubject" text="Gender" />
+                              <TableColumn fx:id="colStudentContact" prefWidth="135.3333740234375" styleClass="colSubject" text="Contact" />
+                              <TableColumn fx:id="colParentName" prefWidth="151.333251953125" styleClass="colSubject" text="Parent Name" />
+                              <TableColumn fx:id="colExamYear" prefWidth="92.3333740234375" styleClass="colSubject" text="Exam Year" />
+                              <TableColumn fx:id="colRegDate" prefWidth="118.6666259765625" styleClass="colSubject" text="reg. Date" />
+                              <TableColumn fx:id="colSubjects" prefWidth="266.0" text="Subjects" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="36.0" layoutY="30.0" text="Registered Student Details in institute" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="406.0" layoutY="50.0" prefHeight="0.0" prefWidth="1146.0" />
+                        <Button fx:id="btnGetStudentDetails" layoutX="1380.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#generateStudentDetailsReport" prefHeight="37.0" prefWidth="180.0" style="-fx-background-color: #CF3D2A; -fx-border-color: white; -fx-background-radius: 15; -fx-border-radius: 15;" styleClass="btnGetDetails" stylesheets="@../Styles/TabStyles.css" text="Get Details" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <FontAwesomeIconView fill="#938f8f" glyphName="SQUARE" layoutX="13.0" layoutY="51.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab styleClass="tab-main" text="Teacher Details">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #34495e;">
+                     <children>
+                        <Label layoutX="145.0" layoutY="100.0" text="Search Teacher" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tblTeacher" layoutX="13.0" layoutY="165.0" prefHeight="776.0" prefWidth="1553.0" style="-fx-border-color: black;" stylesheets="@../Styles/AdminTables.css">
+                           <columns>
+                              <TableColumn fx:id="colTeacherID" prefWidth="103.0" style="-fx-background-color: #f39c12; -fx-border-color: black;" styleClass="colSubject" text="Teacher ID" />
+                              <TableColumn fx:id="colTeacherName" prefWidth="159.0" styleClass="colSubject" text="Name" />
+                              <TableColumn fx:id="colTeacherEmail" prefWidth="173.0" styleClass="colSubject" text="E-mail" />
+                              <TableColumn fx:id="colTeacherContact" prefWidth="145.0" styleClass="colSubject" text="Contact" />
+                              <TableColumn fx:id="colTeacherAddress" prefWidth="183.0" styleClass="colSubject" text="Address" />
+                              <TableColumn fx:id="colTeacherNIC" prefWidth="168.666748046875" styleClass="colSubject" text="NIC" />
+                              <TableColumn fx:id="colTeacherDescription" prefWidth="349.333251953125" text="Description" />
+                              <TableColumn fx:id="colTeacherSubjectName" prefWidth="179.000244140625" styleClass="colSubject" text="Subject Name" />
+                              <TableColumn fx:id="colFee" prefWidth="94.000244140625" styleClass="colFee" text="Fee (Rs)" />
+                           </columns>
+                        </TableView>
+                        <FontAwesomeIconView fill="#938f8f" glyphName="SQUARE" layoutX="13.0" layoutY="51.0" />
+                        <JFXTextField fx:id="txtSearchTeacher" focusColor="WHITE" layoutX="296.0" layoutY="99.0" onAction="#setDataToTeacherTable" prefHeight="31.0" prefWidth="699.0" style="-fx-border-color: white; -fx-background-color: #bdc3c7;" />
+                        <FontAwesomeIconView glyphName="SEARCH" layoutX="969.0" layoutY="122.0" size="20.0" />
+                        <Label layoutX="36.0" layoutY="30.0" text="Teacher's Information " textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="1378.0" layoutY="96.0" mnemonicParsing="false" onMouseClicked="#generateTeacherDetailsReport" prefHeight="37.0" prefWidth="180.0" style="-fx-background-color: #CF3D2A; -fx-border-color: white; -fx-background-radius: 15; -fx-border-radius: 15;" styleClass="btnGetDetails" stylesheets="@../Styles/TabStyles.css" text="Get Details" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Separator layoutX="278.0" layoutY="54.0" prefHeight="0.0" prefWidth="1268.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab styleClass="tab-main" text="Subject Details">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #34495e;">
+                     <children>
+                        <TableView fx:id="tblSubject" layoutX="13.0" layoutY="165.0" prefHeight="776.0" prefWidth="1553.0" style="-fx-border-color: black;" stylesheets="@../Styles/AdminTables.css">
+                           <columns>
+                              <TableColumn fx:id="colSubjectID" prefWidth="161.0" style="-fx-background-color: #f39c12; -fx-border-color: black;" styleClass="colSubject" text="Subject ID" />
+                              <TableColumn fx:id="colSubjectName" prefWidth="342.0" styleClass="colSubject" text="Subject Name" />
+                              <TableColumn fx:id="colSubjectDescription" prefWidth="1043.0" text="Subject Description" />
+                           </columns>
+                        </TableView>
+                        <FontAwesomeIconView fill="#938f8f" glyphName="SQUARE" layoutX="13.0" layoutY="51.0" />
+                        <Label layoutX="36.0" layoutY="30.0" text="Subject Details" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="199.0" layoutY="54.0" prefHeight="3.0" prefWidth="1341.0" />
+                        <JFXTextField fx:id="txtSearchSubject" layoutX="296.0" layoutY="99.0" onAction="#setDataToSubjectTable" prefHeight="31.0" prefWidth="699.0" style="-fx-border-color: white; -fx-background-color: #bdc3c7;" />
+                        <Label layoutX="145.0" layoutY="100.0" text="Search Subject" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnSubjectDetails" layoutX="1381.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#generateSubjectDetailsReport" prefHeight="37.0" prefWidth="180.0" style="-fx-background-color: #CF3D2A; -fx-border-color: white; -fx-background-radius: 15; -fx-border-radius: 15;" styleClass="btnGetDetails" stylesheets="@../Styles/TabStyles.css" text="Get Details" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <FontAwesomeIconView glyphName="SEARCH" layoutX="969.0" layoutY="122.0" size="20.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab styleClass="tab-main" text="Employee Details">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #34495e;">
+                     <children>
+                        <TableView fx:id="tblEmployeeTable" layoutX="13.0" layoutY="165.0" prefHeight="776.0" prefWidth="1553.0" style="-fx-border-color: black;" stylesheets="@../Styles/AdminTables.css">
+                           <columns>
+                              <TableColumn fx:id="colEmployeeID" prefWidth="116.66650390625" style="-fx-background-color: #f39c12; -fx-border-color: black;" styleClass="colSubject" text="Employee ID" />
+                              <TableColumn fx:id="colEmployeeFName" prefWidth="116.33349609375" styleClass="colSubject" text="First Name" />
+                              <TableColumn fx:id="colEmployeeLName" prefWidth="143.33349609375" styleClass="colSubject" text="Last Name" />
+                              <TableColumn fx:id="colEmployeeAddress" prefWidth="191.6669921875" styleClass="colSubject" text="Address" />
+                              <TableColumn fx:id="colEmployeeNIC" prefWidth="204.33349609375" styleClass="colSubject" text="NIC" />
+                              <TableColumn fx:id="colEmployeeEmail" prefWidth="211.6669921875" styleClass="colSubject" text="E-mail" />
+                              <TableColumn fx:id="colEmployeeContact" prefWidth="241.0" styleClass="colSubject" text="Contact" />
+                              <TableColumn fx:id="colJobRole" prefWidth="327.33349609375" styleClass="colSubject" text="Job Role" />
+                           </columns>
+                        </TableView>
+                        <FontAwesomeIconView fill="#938f8f" glyphName="SQUARE" layoutX="13.0" layoutY="51.0" />
+                        <Label layoutX="36.0" layoutY="30.0" text="Employee Details" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="217.0" layoutY="57.0" prefHeight="0.0" prefWidth="1332.0" />
+                        <JFXTextField fx:id="txtSearchEmployee" layoutX="296.0" layoutY="99.0" onAction="#setDataToEmployeeTable" prefHeight="31.0" prefWidth="699.0" style="-fx-background-color: #bdc3c7; -fx-border-color: white;" />
+                        <Label layoutX="124.0" layoutY="100.0" text="Search Employee" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView glyphName="SEARCH" layoutX="969.0" layoutY="122.0" size="20.0" />
+                        <Button fx:id="btnGetEmployeeDetails" layoutX="1380.0" layoutY="101.0" mnemonicParsing="false" onMouseClicked="#generateEmployeeDetailsReport" prefHeight="37.0" prefWidth="180.0" style="-fx-background-color: #CF3D2A; -fx-border-color: white; -fx-background-radius: 15; -fx-border-radius: 15;" styleClass="btnGetDetails" stylesheets="@../Styles/TabStyles.css" text="Get Details" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

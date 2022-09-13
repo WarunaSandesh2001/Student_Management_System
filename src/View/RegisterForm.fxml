@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="RegisterFormContext" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="914.0" prefWidth="1495.0" style="-fx-background-color: linear-gradient(to right top, #181f61, #403471, #604b81, #7d6392, #987ea4, #9c81a9, #a083ad, #a486b2, #9070ab, #795ca5, #5d4a9f, #38399a);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegisterFormController">
+   <children>
+      <AnchorPane layoutX="1395.0" layoutY="3.0" onMouseClicked="#minimizeProgram2" prefHeight="38.0" prefWidth="38.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane layoutX="1447.0" layoutY="3.0" onMouseClicked="#closeTheProgram2" prefHeight="38.0" prefWidth="38.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1449.0" layoutY="7.0" onMouseClicked="#closeTheProgram1">
+         <image>
+            <Image url="@../Assets/exitButton.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="1396.0" layoutY="1.0" onMouseClicked="#minimizeProgram1">
+         <image>
+            <Image url="@../Assets/minimize-1779402-151285945.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="88.0" layoutY="262.0" text="First Name : " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="846.0" layoutY="262.0" text="Last Name : " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="393.0" text="E-mail : " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="147.0" text="Personal Informations">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="323.0" layoutY="163.0" prefHeight="2.0" prefWidth="317.0" />
+      <Label layoutX="87.0" layoutY="520.0" text="Important Buisness Informations">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="419.0" layoutY="535.0" prefHeight="3.0" prefWidth="223.0" />
+      <FontAwesomeIconView glyphName="CIRCLE" layoutX="70.0" layoutY="168.0" />
+      <FontAwesomeIconView glyphName="CIRCLE" layoutX="64.0" layoutY="540.0" />
+      <Label layoutX="123.0" layoutY="605.0" text="User Type :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="674.0" text="Enter User Name :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPassword" layoutX="239.0" layoutY="751.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="409.0" />
+      <Label layoutX="84.0" layoutY="754.0" text="Enter Password :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="txtConfirmPassword" layoutX="952.0" layoutY="751.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="407.0" />
+      <Label layoutX="757.0" layoutY="754.0" text="Confirm your password :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRegister" layoutX="1193.0" layoutY="840.0" mnemonicParsing="false" onAction="#registerOnAction" prefHeight="31.0" prefWidth="261.0" style="-fx-background-color: #0000CD;" text="Register" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="559.0" layoutY="29.0" text="Register Form" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="61.0" />
+         </font>
+      </Label>
+      <Separator layoutX="495.0" layoutY="93.0" prefHeight="16.0" prefWidth="522.0" />
+      <Label layoutX="865.0" layoutY="329.0" text="Contact :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="106.0" layoutY="328.0" text="Address :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="891.0" layoutY="394.0" text="NIC :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtLastName" focusColor="#264fc9" layoutX="962.0" layoutY="257.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="455.0" unFocusColor="WHITE" />
+      <JFXTextField fx:id="txtContact" focusColor="#264fc9" layoutX="961.0" layoutY="323.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="456.0" unFocusColor="WHITE" />
+      <JFXTextField fx:id="txtNIC" focusColor="#264fc9" layoutX="961.0" layoutY="388.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="456.0" unFocusColor="WHITE" />
+      <JFXTextField fx:id="txtAddress" focusColor="#264fc9" layoutX="199.0" layoutY="323.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="452.0" unFocusColor="WHITE" />
+      <JFXTextField fx:id="txtEmail" focusColor="#264fc9" layoutX="199.0" layoutY="388.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="451.0" unFocusColor="WHITE" />
+      <JFXComboBox fx:id="cmbUserType" layoutX="239.0" layoutY="600.0" prefHeight="31.0" prefWidth="223.0" promptText="Not selected----" style="-fx-background-color: white;" unFocusColor="WHITE" />
+      <TextField fx:id="txtUserName" layoutX="239.0" layoutY="672.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="409.0" />
+      <JFXTextField fx:id="txtFirstName" layoutX="197.0" layoutY="260.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="452.0" unFocusColor="WHITE" />
+   </children>
+</AnchorPane>

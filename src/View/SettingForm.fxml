@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="settingFormContext" prefHeight="1035.0" prefWidth="1607.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SettingFormController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutY="25.0" stroke="WHITE" strokeType="INSIDE" width="1607.0" />
+        <Label layoutX="33.0" layoutY="32.0" text="Setting" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="33.0" />
+            </font>
+        </Label>
+        <Separator layoutX="175.0" layoutY="59.0" prefHeight="3.0" prefWidth="330.0" />
+      <JFXButton layoutX="1411.0" layoutY="40.0" onAction="#openRegisterFormOnAction" text="Sign up another user" textFill="#00e1ff" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Label layoutX="346.0" layoutY="378.0" />
+      <Label layoutX="77.0" layoutY="157.0" prefHeight="32.0" prefWidth="175.0" text="Owner's Details ">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="CIRCLE" layoutX="50.0" layoutY="178.0" />
+      <TextField fx:id="txtOwnersName" layoutX="255.0" layoutY="233.0" onKeyReleased="#TextFields_Key_Released" prefHeight="31.0" prefWidth="418.0" />
+      <Label layoutX="118.0" layoutY="234.0" text="Owner's Name :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOwnersContact" layoutX="255.0" layoutY="294.0" onKeyReleased="#TextFields_Key_Released" prefHeight="31.0" prefWidth="418.0" />
+      <Label layoutX="105.0" layoutY="295.0" text="Owner's Contact :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnAdd" layoutX="769.0" layoutY="343.0" mnemonicParsing="false" onAction="#addOnAction" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #00008B;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnUpdate" layoutX="940.0" layoutY="344.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #00008B;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+    </children>
+</AnchorPane>

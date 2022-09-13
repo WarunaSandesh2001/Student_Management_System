@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="resultReportsContext" prefHeight="990.0" prefWidth="1368.0" style="-fx-background-color: linear-gradient(to bottom, #2d2d8d, #3b3989, #474585, #525080, #5c5b7a, #5b566c, #57525f, #514f53, #3e3c3e, #2b292b, #191819, #000000);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ResultReportsFormController">
+   <children>
+      <AnchorPane layoutX="6.0" layoutY="37.0" prefHeight="949.0" prefWidth="1331.0" style="-fx-background-color: linear-gradient(to bottom, #bbc2cd, #909da2, #6d7878, #4e5551, #32332f);;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f1d94" height="37.0" layoutX="-7.0" layoutY="-37.0" onMouseDragged="#dragged" onMousePressed="#pressed" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1366.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="closeBTN" layoutX="1311.0" layoutY="-2.0" onMouseClicked="#closeTheProgram2" onMouseEntered="#closeBTNMouseEntered" onMouseExited="#closeBTNMouseExited" prefHeight="38.0" prefWidth="56.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1322.0" layoutY="2.0" onMouseClicked="#closeTheProgram1" onMouseEntered="#closeBTNMouseEntered1" onMouseExited="#closeBTNMouseExited1">
+         <image>
+            <Image url="@../Assets/exitButton.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXTextField fx:id="txtSearchStudent" focusColor="#2312dd" layoutX="280.0" layoutY="83.0" onAction="#searchStudentMarksOnAction" prefHeight="31.0" prefWidth="571.0" style="-fx-background-color: white; -fx-border-color: black;" text="S-00" unFocusColor="BLACK" />
+      <Label layoutX="140.0" layoutY="88.0" prefHeight="26.0" prefWidth="125.0" text="Search Student">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="823.0" layoutY="108.0" size="20.0" />
+      <ComboBox fx:id="cmbEvaluationMonth" layoutX="1000.0" layoutY="85.0" prefHeight="33.0" prefWidth="299.0" promptText="Evaluation Month" style="-fx-background-color: #ecf0f1; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Label fx:id="lblExamYear1" layoutX="1149.0" layoutY="276.0" prefHeight="26.0" prefWidth="94.0" text="Exam Year :">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblExamYear" layoutX="1255.0" layoutY="277.0" prefHeight="26.0" prefWidth="60.0" textFill="#571212">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="588.0" layoutY="5.0" prefHeight="26.0" prefWidth="230.0" text="EVALUATION REPORTS" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblStudentResults" layoutX="83.0" layoutY="318.0" prefHeight="592.0" prefWidth="1210.0" style="-fx-border-color: black;" stylesheets="@../Styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colStudentID" prefWidth="183.6666717529297" styleClass="colStudentID" text="Student ID" />
+          <TableColumn fx:id="colSubject" prefWidth="344.3333282470703" styleClass="colStudentID" text="Subject" />
+            <TableColumn fx:id="colIssuedDate" prefWidth="245.0" styleClass="colStudentID" text="Issued Date" />
+            <TableColumn fx:id="colGrade" prefWidth="235.66665649414062" styleClass="colStudentID" text="Grade" />
+            <TableColumn fx:id="colMarks" prefWidth="196.66668701171875" styleClass="colStudentID" text="Marks" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cmbExamNames" layoutX="1001.0" layoutY="153.0" prefHeight="33.0" prefWidth="298.0" promptText="Exam Name" style="-fx-background-color: #ecf0f1; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <JFXCheckBox fx:id="chBoxShowAllMarks" layoutX="55.0" layoutY="266.0" onAction="#sortAllMarksOnAction" prefHeight="25.0" prefWidth="216.0" text="Show all Student Marks">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXCheckBox>
+      <Button layoutX="1178.0" layoutY="930.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: #A52A2A;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="982.0" layoutY="931.0" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: #7f8c8d;" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

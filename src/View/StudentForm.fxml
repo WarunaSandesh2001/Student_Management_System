@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="studentFormContext" prefHeight="1030.0" prefWidth="1618.0" style="-fx-background-color: #34495e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutY="9.0" stroke="WHITE" strokeType="INSIDE" width="1620.0" />
+      <Label layoutX="52.0" layoutY="22.0" text="Student Details Management" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="477.0" layoutY="45.0" prefHeight="2.0" prefWidth="330.0" />
+      <FontAwesomeIconView fill="#a8a8a8" glyphName="CIRCLE" layoutX="22.0" layoutY="46.0" size="15.0" />
+      <AnchorPane layoutX="19.0" layoutY="74.0" prefHeight="334.0" prefWidth="1581.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49); -fx-border-color: black;">
+         <children>
+            <Label fx:id="lblStudentID" layoutX="1482.0" layoutY="12.0" prefHeight="26.0" prefWidth="94.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFullName" layoutX="142.0" layoutY="64.0" onKeyReleased="#textFieldsForAdd_key_Released" prefHeight="31.0" prefWidth="255.0" />
+            <TextField fx:id="txtAddress" layoutX="142.0" layoutY="117.0" onKeyReleased="#textFieldsForAdd_key_Released" prefHeight="31.0" prefWidth="255.0" />
+            <Label layoutX="49.0" layoutY="70.0" text="Full Name :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label layoutX="60.0" layoutY="122.0" text="Address :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <TextField fx:id="txtParentName" layoutX="143.0" layoutY="167.0" onKeyReleased="#textFieldsForAdd_key_Released" prefHeight="31.0" prefWidth="255.0" />
+            <Label layoutX="503.0" layoutY="74.0" text="NIC :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <TextField fx:id="txtContact" layoutX="557.0" layoutY="174.0" onKeyReleased="#textFieldsForAdd_key_Released" prefHeight="31.0" prefWidth="255.0" />
+            <Label layoutX="486.0" layoutY="126.0" text="E mail :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <TextField fx:id="txtNIC" layoutX="559.0" layoutY="68.0" onKeyReleased="#textFieldsForAdd_key_Released" prefHeight="31.0" prefWidth="255.0" />
+            <Label layoutX="478.0" layoutY="178.0" text="Contact :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <TextField fx:id="txtEmail" layoutX="559.0" layoutY="122.0" onKeyReleased="#textFieldsForAdd_key_Released" prefHeight="31.0" prefWidth="255.0" />
+            <Label layoutX="28.0" layoutY="171.0" text="Parent Name :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <ComboBox fx:id="cmbExamYear" layoutX="143.0" layoutY="221.0" prefHeight="31.0" prefWidth="255.0" promptText="Select Year-------" style="-fx-background-color: white; -fx-border-color: black;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <Label layoutX="46.0" layoutY="225.0" text="Exam year :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label layoutX="64.0" layoutY="274.0" text="Gender :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Button fx:id="btnRegister" layoutX="1366.0" layoutY="275.0" mnemonicParsing="false" onAction="#RegisterOnAction" prefHeight="37.0" prefWidth="167.0" style="-fx-background-color: #00008B;" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="1373.0" layoutY="12.0" text="Student ID : " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="238.0" text="Admission Fee :">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblRegisterFees" layoutX="681.0" layoutY="239.0" text="1000/=" textFill="#2204e1">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblSubject" layoutX="928.0" layoutY="52.0" prefHeight="160.0" prefWidth="323.0" style="-fx-background-color: white; -fx-border-color: black;" stylesheets="@../Styles/TableStyles.css">
+              <columns>
+                <TableColumn fx:id="colSubjectName" prefWidth="130.0" styleClass="colSubject" text="Subject" />
+                <TableColumn fx:id="colTeacherName" prefWidth="189.0" styleClass="colTeacher" text="Teacher" />
+              </columns>
+            </TableView>
+            <JFXButton layoutX="1232.0" layoutY="286.0" onAction="#addSubjectOnAction" text="Add" textFill="#24720d" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXRadioButton layoutX="166.0" layoutY="275.0" style="-jfx-selected-color: #7FFF00;" text="Male" textFill="WHITE">
+               <toggleGroup>
+                  <ToggleGroup fx:id="toglGender" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="270.0" layoutY="276.0" style="-jfx-selected-color: #7FFF00;" text="Female" textFill="WHITE" toggleGroup="$toglGender" />
+            <JFXCheckBox fx:id="chboxClearPayments" layoutX="518.0" layoutY="280.0" text="Successfully paid clear payments" />
+            <JFXComboBox fx:id="cmbSelectSubject" labelFloat="true" layoutX="944.0" layoutY="231.0" prefHeight="31.0" prefWidth="255.0" promptText="Select Subject" />
+            <JFXComboBox fx:id="cmbSelectTeacher" labelFloat="true" layoutX="944.0" layoutY="282.0" prefHeight="31.0" prefWidth="255.0" promptText="Select Teacher" />
+            <JFXButton layoutX="1230.0" layoutY="251.0" onAction="#removeSubjectOnAction" prefHeight="28.0" prefWidth="68.0" text="Remove" textFill="#942e15" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="TRASH" layoutX="1223.0" layoutY="270.0" />
+            <FontAwesomeIconView glyphName="PENCIL" layoutX="1223.0" layoutY="305.0" />
+
+         </children></AnchorPane>
+      <AnchorPane layoutX="21.0" layoutY="432.0" prefHeight="567.0" prefWidth="1579.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);" />
+      <Label layoutX="70.0" layoutY="439.0" text="Modify Student Details">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="WHITE" glyphName="SQUARE" layoutX="42.0" layoutY="455.0" size="15.0" />
+      <Label layoutX="119.0" layoutY="486.0" text="Search" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblStudentDetails" layoutX="37.0" layoutY="541.0" onMouseClicked="#setDataToFieldsOnAction" prefHeight="247.0" prefWidth="1542.0" style="-fx-background-color: #6e8fba; -fx-border-color: BLACK;" stylesheets="@../Styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colStudentID" prefWidth="83.00003051757812" style="-fx-border-color: black; -fx-background-color: #f39c12;" styleClass="colStudentID" text="Student ID" />
+          <TableColumn fx:id="colName" prefWidth="202.00003051757812" styleClass="colStudentName" text="Name" />
+            <TableColumn fx:id="colNIC" prefWidth="158.0" styleClass="colStudentNIC" text="NIC" />
+            <TableColumn fx:id="colAddress" prefWidth="202.3333740234375" styleClass="colStudentAddress" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="220.6666259765625" styleClass="colStudentEmail" text="E mail" />
+            <TableColumn fx:id="colContact" prefWidth="202.333251953125" styleClass="colStudentContact" text="Contact No." />
+            <TableColumn fx:id="colExamYear" prefWidth="126.0" styleClass="colExamYear" text="Exam Year" />
+            <TableColumn fx:id="colSubject" prefWidth="338.0" text="Subjects" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtTempFullName" layoutX="158.0" layoutY="816.0" onKeyReleased="#textFieldsForUpdate_key_Released" prefHeight="31.0" prefWidth="255.0" />
+      <TextField fx:id="txtTempEmail" layoutX="157.0" layoutY="871.0" onKeyReleased="#textFieldsForUpdate_key_Released" prefHeight="31.0" prefWidth="255.0" />
+      <Label layoutX="56.0" layoutY="820.0" text="Full Name :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <TextField fx:id="txtTempNIC" layoutX="569.0" layoutY="816.0" onKeyReleased="#textFieldsForUpdate_key_Released" prefHeight="31.0" prefWidth="255.0" />
+      <TextField fx:id="txtTempContact" layoutX="569.0" layoutY="871.0" onKeyReleased="#textFieldsForUpdate_key_Released" prefHeight="31.0" prefWidth="255.0" />
+      <TextField fx:id="txtTempAddress" layoutX="1009.0" layoutY="816.0" onKeyReleased="#textFieldsForUpdate_key_Released" prefHeight="31.0" prefWidth="255.0" />
+      <ComboBox fx:id="cmbTempExamYear" layoutX="1014.0" layoutY="870.0" onMouseClicked="#btnUpdateDisableOn" prefHeight="33.0" prefWidth="247.0" promptText="Not selected" style="-fx-background-color: #00000000; -fx-border-color: black;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Button layoutX="1143.0" layoutY="942.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: #A52A2A;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnUpdate" layoutX="1378.0" layoutY="940.0" mnemonicParsing="false" onAction="#UpdateOnAction" prefHeight="37.0" prefWidth="167.0" style="-fx-background-color: #00008B;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <JFXTextField fx:id="txtSearchStudent" layoutX="190.0" layoutY="480.0" onAction="#searchStudentOnAction" prefHeight="31.0" prefWidth="587.0" style="-fx-border-color: black; -fx-background-color: #ecf0f1;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXTextField>
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="753.0" layoutY="502.0" size="20.0" />
+      <Label layoutX="71.0" layoutY="86.0" text="Add New Student">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="#eaeeee" glyphName="SQUARE" layoutX="43.0" layoutY="102.0" size="15.0" />
+      <Label layoutX="82.0" layoutY="877.0" text="E-mail :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="511.0" layoutY="821.0" text="NIC :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="484.0" layoutY="875.0" text="Contact :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="927.0" layoutY="821.0" text="Address :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="910.0" layoutY="874.0" text="Exam Year :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

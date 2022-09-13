@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="TeacherFormContext" prefHeight="1035.0" prefWidth="1607.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TeacherFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutY="7.0" stroke="WHITE" strokeType="INSIDE" width="1607.0" />
+      <Label layoutX="596.0" layoutY="22.0" text="Teacher Details Management" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Separator layoutX="992.0" layoutY="43.0" prefHeight="0.0" prefWidth="330.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="SQUARE" layoutX="58.0" layoutY="103.0" />
+      <Label layoutX="83.0" layoutY="86.0" text="Add New Teacher" textFill="#030303">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbSelectSubject" focusColor="#1a42bb" labelFloat="true" layoutX="1124.0" layoutY="225.0" prefHeight="31.0" prefWidth="407.0" promptText="Teacher's Subject" style="-fx-background-color: #bdc3c7;" />
+      <JFXTextField fx:id="txtFullName" focusColor="#1a42bb" labelFloat="true" layoutX="142.0" layoutY="145.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="412.0" promptText="Full Name" />
+      <JFXTextField fx:id="txtContact" focusColor="#1a42bb" labelFloat="true" layoutX="142.0" layoutY="224.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="412.0" promptText="Contact" />
+      <JFXTextField fx:id="txtAddress" focusColor="#1a42bb" labelFloat="true" layoutX="629.0" layoutY="145.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="412.0" promptText="Address" />
+      <JFXTextField fx:id="txtNIC" focusColor="#1a42bb" labelFloat="true" layoutX="628.0" layoutY="223.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="412.0" promptText="NIC" />
+      <JFXTextField fx:id="txtEmail" focusColor="#1a42bb" labelFloat="true" layoutX="1122.0" layoutY="147.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="412.0" promptText="E-mail" />
+      <JFXTextField fx:id="txtDescription" focusColor="#1a42bb" labelFloat="true" layoutX="142.0" layoutY="299.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="900.0" promptText="Teacher description" />
+      <Button fx:id="btnAdd" layoutX="1264.0" layoutY="353.0" mnemonicParsing="false" onAction="#AddNewTeacherOnAction" prefHeight="31.0" prefWidth="192.0" style="-fx-background-color: #00008B;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <FontAwesomeIconView fill="WHITE" glyphName="SQUARE" layoutX="59.0" layoutY="481.0" />
+      <Label layoutX="84.0" layoutY="465.0" text="Modify Teacher Details">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblTeacherDetails" layoutX="54.0" layoutY="567.0" onMouseClicked="#setDataOnAction" prefHeight="196.0" prefWidth="1499.0" style="-fx-border-color: BLACK;" stylesheets="@../Styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="104.0" style="-fx-border-color: BLACK;" styleClass="colStudentID" text="Teacher ID" />
+          <TableColumn fx:id="colFullName" prefWidth="148.0" styleClass="colStudentID" text="Full Name" />
+            <TableColumn fx:id="colAddress" prefWidth="179.33334350585938" styleClass="colStudentID" text="E-mail" />
+            <TableColumn fx:id="colEmail" prefWidth="212.66668701171875" styleClass="colStudentID" text="Contact" />
+            <TableColumn fx:id="colContact" prefWidth="204.66668701171875" styleClass="colStudentID" text="Address" />
+            <TableColumn fx:id="colNIC" prefWidth="192.333251953125" styleClass="colStudentID" text="NIC" />
+            <TableColumn fx:id="colDescription" prefWidth="217.666748046875" text="Description" />
+            <TableColumn fx:id="colSubject" prefWidth="140.0" styleClass="colStudentID" text="Subject" />
+            <TableColumn fx:id="colFee" prefWidth="93.333251953125" styleClass="colFeeForTeacher" text="Fee (Rs)" />
+        </columns>
+      </TableView>
+      <JFXTextField labelFloat="true" layoutX="226.0" layoutY="507.0" prefHeight="31.0" prefWidth="817.0" style="-fx-border-color: black;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></JFXTextField>
+      <Label layoutX="153.0" layoutY="512.0" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="1016.0" layoutY="531.0" size="20.0" />
+      <TextField fx:id="txtTempFullName" layoutX="287.0" layoutY="793.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="296.0" />
+      <TextField fx:id="txtTempAddress" layoutX="287.0" layoutY="854.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="296.0" />
+      <Label layoutX="173.0" layoutY="796.0" text="Full Name :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTempEmail" layoutX="288.0" layoutY="917.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="296.0" />
+      <TextField fx:id="txtTempContact" layoutX="730.0" layoutY="794.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="296.0" />
+      <TextField fx:id="txtTempNIC" layoutX="731.0" layoutY="855.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="296.0" />
+      <TextField fx:id="txtTempDescription" layoutX="289.0" layoutY="975.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="741.0" />
+      <JFXComboBox fx:id="cmgTempSubject" labelFloat="true" layoutX="731.0" layoutY="919.0" prefHeight="31.0" prefWidth="296.0" promptText="Select subject" style="-fx-background-color: #bdc3c7;" />
+      <Button fx:id="btnUpdate" layoutX="1264.0" layoutY="881.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="192.0" style="-fx-background-color: #00008B;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="1264.0" layoutY="944.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="192.0" style="-fx-background-color: #A52A2A;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="1359.0" layoutY="90.0" text="Teacher ID :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTeacherID" layoutX="1461.0" layoutY="91.0" prefHeight="25.0" prefWidth="97.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="255.0" layoutY="42.0" prefHeight="0.0" prefWidth="330.0" />
+      <JFXTextField fx:id="txtFee" focusColor="#1a42bb" labelFloat="true" layoutX="141.0" layoutY="368.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="412.0" promptText="Fee (Rs)" />
+      <TextField fx:id="txtTempFee" layoutX="1183.0" layoutY="795.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="296.0" />
+      <Label layoutX="187.0" layoutY="856.0" text="Address :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="200.0" layoutY="919.0" text="E-mail :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="159.0" layoutY="978.0" text="Description :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="638.0" layoutY="796.0" text="Contact :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="668.0" layoutY="858.0" text="NIC :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="1116.0" layoutY="798.0" text="Fee :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

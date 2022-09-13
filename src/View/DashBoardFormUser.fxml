@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashBoardFormContext" prefHeight="1030.0" prefWidth="1618.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardFormUserController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#34495e" height="321.0" layoutX="69.0" layoutY="86.0" stroke="BLACK" strokeType="INSIDE" width="755.0" />
+      <Label layoutX="115.0" layoutY="96.0" text="Summery" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="WHITE" glyphName="CIRCLE" layoutX="92.0" layoutY="119.0" />
+      <Label layoutX="530.0" layoutY="333.0" prefHeight="25.0" prefWidth="62.0" text="Owner :" textFill="#e8dede">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOwnersName" layoutX="601.0" layoutY="335.0" prefHeight="25.0" prefWidth="205.0" textFill="#e8dede">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="274.0" layoutY="168.0" prefHeight="26.0" prefWidth="182.0" text="Number of Students : " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNumberOfStudents" layoutX="482.0" layoutY="170.0" prefHeight="25.0" prefWidth="62.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNumberOfTeachers" layoutX="482.0" layoutY="212.0" prefHeight="25.0" prefWidth="62.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="553.0" layoutY="369.0" prefHeight="25.0" prefWidth="35.0" text="Tel :" textFill="#e8dede">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOwnersContact" layoutX="601.0" layoutY="371.0" prefHeight="25.0" prefWidth="205.0" textFill="#e8dede">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNumberOfSubjects" layoutX="482.0" layoutY="252.0" prefHeight="25.0" prefWidth="62.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="922.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="319.0" fitWidth="691.0" layoutX="890.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/visual-mobile.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="274.0" layoutY="211.0" prefHeight="26.0" prefWidth="182.0" text="Number of Teachers : " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="274.0" layoutY="250.0" prefHeight="26.0" prefWidth="182.0" text="Number of Subjects  : " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Separator layoutX="231.0" layoutY="119.0" prefHeight="0.0" prefWidth="239.0" />
+      <TableView fx:id="tblDetails" layoutX="461.0" layoutY="510.0" prefHeight="446.0" prefWidth="638.0" stylesheets="@../Styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colSubjects" prefWidth="259.0" styleClass="colSubject" text="Subject" />
+          <TableColumn fx:id="colTeachers" prefWidth="375.333251953125" styleClass="colTeacher" text="Teacher" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

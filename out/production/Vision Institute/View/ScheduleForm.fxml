@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="scheduleFormContext" prefHeight="1030.0" prefWidth="1618.0" style="-fx-background-color: #34495e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ScheduleFormController">
+    <children>
+      <AnchorPane layoutX="42.0" layoutY="98.0" prefHeight="899.0" prefWidth="1534.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutX="-1.0" layoutY="33.0" stroke="WHITE" strokeType="INSIDE" width="1620.0" />
+        <Label layoutX="64.0" layoutY="45.0" text="Class Schedule" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+        <FontAwesomeIconView fill="#a8a8a8" glyphName="CIRCLE" layoutX="37.0" layoutY="73.0" size="15.0" />
+        <Separator layoutX="314.0" layoutY="69.0" prefHeight="4.0" prefWidth="633.0" />
+      <TableView fx:id="tblScheduleDetails" layoutX="83.0" layoutY="560.0" prefHeight="358.0" prefWidth="1460.0" style="-fx-border-color: black;" stylesheets="@../Styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colTeacherName" prefWidth="164.0" styleClass="colStudentID" text="Teacher" />
+          <TableColumn fx:id="colSubject" prefWidth="183.0" styleClass="colStudentID" text="Subject" />
+            <TableColumn fx:id="colHallNo" prefWidth="86.6666259765625" styleClass="colStudentID" text="Hall No" />
+            <TableColumn fx:id="colDescription" prefWidth="307.3333740234375" styleClass="colStudentID" text="Description" />
+            <TableColumn fx:id="colDate" prefWidth="198.33331298828125" styleClass="colStudentID" text="Date" />
+            <TableColumn fx:id="colStartTime" prefWidth="190.6666259765625" styleClass="colStudentID" text="Start Time" />
+            <TableColumn fx:id="colEndTime" prefWidth="194.3333740234375" styleClass="colStudentID" text="End Time" />
+            <TableColumn fx:id="colClass" prefWidth="125.666748046875" styleClass="colStudentID" text="Class" />
+        </columns>
+      </TableView>
+      <JFXDatePicker fx:id="datePForAdd" defaultColor="#1f02dd" layoutX="893.0" layoutY="263.0" prefHeight="31.0" prefWidth="236.0" promptText="Date" />
+      <ComboBox fx:id="cmbTeacherNameForAdd" layoutX="139.0" layoutY="162.0" prefHeight="31.0" prefWidth="255.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Label layoutX="140.0" layoutY="138.0" text="Teacher Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTeacherID" editable="false" layoutX="506.0" layoutY="163.0" mouseTransparent="true" prefHeight="31.0" prefWidth="223.0" />
+      <Label layoutX="506.0" layoutY="140.0" text="Teacher ID">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="802.0" layoutY="140.0" text="Subject">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbExamYear" layoutX="1201.0" layoutY="162.0" prefHeight="31.0" prefWidth="255.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Label layoutX="1202.0" layoutY="138.0" text="Exam Year">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTimePicker fx:id="timePEndTime" defaultColor="#1f02dd" layoutX="540.0" layoutY="263.0" prefHeight="31.0" prefWidth="250.0" promptText="End Time" />
+      <JFXTimePicker fx:id="timePStartTime" defaultColor="#1f02dd" layoutX="140.0" layoutY="263.0" prefHeight="31.0" prefWidth="262.0" promptText="Start Time" />
+      <JFXTextField fx:id="txtDescription" focusColor="#0c39bf" labelFloat="true" layoutX="141.0" layoutY="359.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="644.0" promptText="Description (Theory / paper class / Exam  .... )" />
+      <Button fx:id="btnAddToSchedule" layoutX="1317.0" layoutY="313.0" mnemonicParsing="false" onAction="#AddToScheduleOnAction" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #0f0a89;" text="Add to Schedule" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="1317.0" layoutY="359.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #95a5a6;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="3.0" layoutX="85.0" layoutY="431.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1448.0" />
+      <JFXDatePicker fx:id="datePForView" defaultColor="#1f02dd" layoutX="1246.0" layoutY="487.0" onAction="#sortDataOnAction" prefHeight="31.0" prefWidth="236.0" promptText="Date" />
+      <ComboBox fx:id="cmbTeacherNameForView" layoutX="152.0" layoutY="487.0" prefHeight="31.0" prefWidth="255.0" promptText="Teacher Name">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Button layoutX="1317.0" layoutY="942.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #A52A2A;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <JFXTextField fx:id="txtHallNo" focusColor="#0a36b9" labelFloat="true" layoutX="896.0" layoutY="360.0" onKeyReleased="#jfxTextFields_Key_Released" prefHeight="31.0" prefWidth="273.0" promptText="Hall No. ( H-## )" />
+      <ComboBox fx:id="cmbSubject" layoutX="802.0" layoutY="161.0" prefHeight="31.0" prefWidth="255.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <JFXButton layoutX="1495.0" layoutY="52.0" onAction="#refreshOnAction" text="refresh" textFill="WHITE" underline="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" layoutX="1484.0" layoutY="77.0" size="20.0" />
+    </children>
+</AnchorPane>

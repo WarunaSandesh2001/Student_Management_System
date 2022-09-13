@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="systemReportsFormContext" prefHeight="1030.0" prefWidth="1618.0" style="-fx-background-color: #34495e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SystemReportFormController">
+   <children>
+      <AnchorPane layoutX="43.0" layoutY="97.0" prefHeight="897.0" prefWidth="1534.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);">
+         <children>
+            <Label layoutX="175.0" layoutY="91.0" prefHeight="26.0" prefWidth="306.0" text="To view Income report of the institute ">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="558.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#generateIncomeReportOnAction" prefHeight="31.0" prefWidth="178.0" style="-fx-background-color: blue;" text="View Report" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Line endX="533.3333129882812" layoutX="240.0" layoutY="155.0" startX="-100.0" />
+            <Label layoutX="175.0" layoutY="195.0" prefHeight="26.0" prefWidth="306.0" text="To view student which are registered to">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="558.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#generateStudentRegisteredToSubjectsReportOnAction" prefHeight="31.0" prefWidth="178.0" style="-fx-background-color: blue;" text="View Report" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="171.0" layoutY="216.0" prefHeight="26.0" prefWidth="306.0" text=" subjects ">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Line endX="533.3333129882812" layoutX="241.0" layoutY="273.0" startX="-100.0" />
+            <ImageView fitHeight="673.0" fitWidth="549.0" layoutX="935.0" layoutY="112.0">
+               <image>
+                  <Image url="@../Assets/blue-growth-chart.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutX="-1.0" layoutY="33.0" stroke="WHITE" strokeType="INSIDE" width="1620.0" />
+      <Label layoutX="68.0" layoutY="45.0" text="System Reports" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="#a8a8a8" glyphName="CIRCLE" layoutX="37.0" layoutY="73.0" size="15.0" />
+      <Separator layoutX="314.0" layoutY="69.0" prefHeight="4.0" prefWidth="633.0" />
+   </children>
+</AnchorPane>

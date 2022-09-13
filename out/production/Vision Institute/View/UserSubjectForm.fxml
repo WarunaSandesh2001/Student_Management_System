@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="SubjectFormContext" prefHeight="1030.0" prefWidth="1618.0" style="-fx-background-color: #34495e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UserSubjectFormController">
+   <children>
+      <AnchorPane layoutX="44.0" layoutY="97.0" prefHeight="894.0" prefWidth="1531.0" style="-fx-background-color: linear-gradient(to right top, #4f4f54, #6a6a70, #85878e, #a2a4ac, #c0c3cc, #bdc3cd, #bac3cd, #b6c3cd, #90a4ac, #6c858b, #4a686a, #2c4c49);" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutY="32.0" stroke="WHITE" strokeType="INSIDE" width="1620.0" />
+      <Label layoutX="64.0" layoutY="43.0" text="Subject Management" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="#a8a8a8" glyphName="CIRCLE" layoutX="38.0" layoutY="70.0" size="15.0" />
+      <Separator layoutX="381.0" layoutY="66.0" prefHeight="0.0" prefWidth="476.0" />
+      <TextField fx:id="txtSearchStudent" layoutX="382.0" layoutY="135.0" onAction="#searchStudentOnAction" prefHeight="40.0" prefWidth="596.0" style="-fx-background-color: #F5F5F5; -fx-border-color: black;" />
+      <Label layoutX="314.0" layoutY="142.0" prefHeight="26.0" prefWidth="63.0" text="Search ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="947.0" layoutY="160.0" size="20.0" />
+      <TableView fx:id="tblStudentDetails" layoutX="92.0" layoutY="211.0" onMouseClicked="#setSubjectsToTableOnAction" prefHeight="318.0" prefWidth="1447.0" style="-fx-background-color: white; -fx-border-color: BLACK;" stylesheets="@../Styles/TableStyles.css">
+         <columns>
+            <TableColumn fx:id="colStudentID" prefWidth="92.00003814697266" style="-fx-border-color: black; -fx-background-color: #f39c12;" styleClass="colStudentID" text="Student ID" />
+            <TableColumn fx:id="colName" prefWidth="179.66668701171875" style="-fx-border-color: black;" styleClass="colStudentName" text="Name" />
+            <TableColumn fx:id="colNIC" prefWidth="189.33331298828125" style="-fx-border-color: black;" styleClass="colStudentNIC" text="NIC" />
+            <TableColumn fx:id="colAddress" prefWidth="211.33331298828125" style="-fx-border-color: black;" styleClass="colStudentAddress" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="197.33331298828125" style="-fx-border-color: black;" styleClass="colStudentEmail" text="Email" />
+            <TableColumn fx:id="colContact" prefWidth="218.66668701171875" style="-fx-border-color: black;" styleClass="colStudentContact" text="Contact" />
+            <TableColumn fx:id="colExamYear" prefWidth="107.3333740234375" style="-fx-border-color: black;" styleClass="colExamYear" text="Exam Year" />
+            <TableColumn fx:id="colSubjects" prefWidth="245.6666259765625" style="-fx-border-color: black;" text="Subjects" />
+         </columns>
+      </TableView>
+      <TableView fx:id="tblSubjectDetails" layoutX="956.0" layoutY="576.0" prefHeight="303.0" prefWidth="409.0" style="-fx-border-color: black;" stylesheets="@../Styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colSubject" prefWidth="147.33334350585938" styleClass="colSubject" text="Subject" />
+          <TableColumn fx:id="colTeacher" minWidth="6.9999847412109375" prefWidth="258.6666564941406" styleClass="colTeacher" text="Teacher" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cmbSelectSubject" layoutX="239.0" layoutY="643.0" prefHeight="31.0" prefWidth="384.0" promptText="Select Subject" style="-fx-background-color: white; -fx-border-color: black;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Button layoutX="697.0" layoutY="655.0" mnemonicParsing="false" onAction="#addSubjectOnAction" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: #27ae60;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ComboBox fx:id="cmbSelectTeacher" layoutX="239.0" layoutY="709.0" prefHeight="31.0" prefWidth="384.0" promptText="Select Teacher" style="-fx-background-color: white; -fx-border-color: black;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Button layoutX="697.0" layoutY="703.0" mnemonicParsing="false" onAction="#deleteSubjectOnAction" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: #c0392b;" text="Remove" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="1332.0" layoutY="924.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="31.0" prefWidth="176.0" style="-fx-background-color: #00008B;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
